@@ -94,7 +94,7 @@ const Topic = () => {
         <dialog id="my_modal_2" className="modal">
           <form onSubmit={handleList} method="dialog" className="modal-box">
             <p className="font-bold text-lg">Create a topic list</p>
-            <p className="my-2 mx-6 mt-5">Topic Name</p>
+            <p className="my-2 mx-6 mt-5">Topic Name*</p>
             <input
               required
               name="name"
@@ -102,7 +102,7 @@ const Topic = () => {
               placeholder="Type here"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">Position</p>
+            <p className="my-2 mx-6 mt-5">Position*</p>
             <input
               required
               name="position"
@@ -110,7 +110,7 @@ const Topic = () => {
               placeholder="Type Your position"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">News</p>
+            <p className="my-2 mx-6 mt-5">News*</p>
             <input
               required
               name="news"
@@ -118,7 +118,7 @@ const Topic = () => {
               placeholder="Type Your news"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">Ariticales</p>
+            <p className="my-2 mx-6 mt-5">Ariticales*</p>
             <input
               required
               name="articale"
@@ -126,7 +126,7 @@ const Topic = () => {
               placeholder="Type Your ariticales"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">Highlights</p>
+            <p className="my-2 mx-6 mt-5">Highlights*</p>
             <input
               required
               name="highlight"
@@ -134,7 +134,7 @@ const Topic = () => {
               placeholder="Type Your highlights"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">Description</p>
+            <p className="my-2 mx-6 mt-5">Description*</p>
             <input
               required
               name="description"
@@ -142,7 +142,7 @@ const Topic = () => {
               placeholder="Type Your description"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">Main Heading</p>
+            <p className="my-2 mx-6 mt-5">Main Heading*</p>
             <input
               required
               name="main"
@@ -150,7 +150,7 @@ const Topic = () => {
               placeholder="Type Your main heading"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">MenuFlag</p>
+            <p className="my-2 mx-6 mt-5">MenuFlag*</p>
             <input
               required
               name="menuFlag"
@@ -159,7 +159,7 @@ const Topic = () => {
               className="input input-bordered w-full max-w-xl"
             />
 
-            <p className="my-2 mx-6 mt-5">Upload Logo</p>
+            <p className="my-2 mx-6 mt-5">Upload Logo*</p>
             <input
               required
               name="uploadLogo"
@@ -167,7 +167,7 @@ const Topic = () => {
               placeholder="Type Your main menuflag"
               className="input input-bordered w-full max-w-xl"
             />
-            <p className="my-2 mx-6 mt-5">Upload Nav Logo</p>
+            <p className="my-2 mx-6 mt-5">Upload Nav Logo*</p>
             <input
               required
               name="navLogo"

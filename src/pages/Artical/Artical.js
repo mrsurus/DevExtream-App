@@ -104,7 +104,7 @@ const Artical = () => {
       <div className="flex md:justify-between justify-around md:border p-2 lg:mx-60  ">
         <div className="">
           <div className="flex items-center">
-            <p>Topic</p>
+            <p className="">Topic</p>
             <div className="relative w-full mx-3 ">
               <select name="topic"
                 onChange={(event) => getData(event.target.value)} // Attach onChange to the <select> element

@@ -3,6 +3,12 @@ import React, { useEffect, useState } from "react";
 const SubToicForm = () => {
   const [listData, setListData] = useState();
   const [subList, setSubList] = useState([]);
+  const [isToggled, setIsToggled] = useState(false);
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+    console.log(isToggled);
+  };
 
   useEffect(() => {
     fetch("http://localhost:3000/topic")
@@ -27,6 +33,11 @@ const SubToicForm = () => {
     const menuFlag = from?.menuFlag?.value;
     const uploadLogo = from?.uploadLogo?.value;
     const navLogo = from?.navLogo?.value;
+    const sequence =""
+    const createdBy =""
+    const createdOn =""
+    const editOn =""
+    const isActive= isToggled;
 
     const fomData = {
       name,
@@ -41,6 +52,12 @@ const SubToicForm = () => {
       menuFlag,
       uploadLogo,
       navLogo,
+      sequence,
+      createdBy,
+      createdOn,
+      editOn,
+      isActive,
+
     };
 
     try {
@@ -87,20 +104,20 @@ const SubToicForm = () => {
   };
   return (
     <form onSubmit={handleList} className="my-10">
-      <p className="font-bold text-lg lg:px-40">Create a Sub topic list</p>
+      <p className="font-bold text-xl mx-6 lg:px-40">Create a Sub Topic List</p>
      <div className="grid grid-cols-2 lg:px-40">
      <div>
-        <p className="my-2 mx-6 mt-5">Topic Name</p>
+        <p className="my-2 mx-6 mt-5">SubTopic Name*</p>
         <input
           required
           name="name"
           type="text"
-          placeholder="Type here"
+          placeholder="Enter Yor name"
           className="input input-bordered "
         />
       </div>
       <div>
-      <p className="my-2 mx-6 mt-5">Select Topic</p>
+      <p className="my-2 mx-6 mt-5">Select Topic*</p>
             <div className="mx-5">
               <select name="selectTopic" className="select select-bordered w-10/12  ">
                 {subList.map((list) => (
@@ -110,101 +127,101 @@ const SubToicForm = () => {
             </div>
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Position</p>
+        <p className="my-2 mx-6 mt-5">Position*</p>
         <input
           required
           name="position"
           type="text"
-          placeholder="Type Your position"
+          placeholder="Enter Your position"
           className="input input-bordered "
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">News</p>
+        <p className="my-2 mx-6 mt-5">News*</p>
         <input
           required
           name="news"
           type="text"
-          placeholder="Type Your news"
+          placeholder="Enter Your news"
           className="input input-bordered"
         />
       </div>
       <div>
-        <p className="my-2 lg:mx-6 mt-5">Ariticales</p>
+        <p className="my-2 lg:mx-6 mt-5">Ariticales*</p>
         <input
           required
           name="articale"
           type="text"
-          placeholder="Type Your ariticales"
+          placeholder="Enter Your ariticales"
           className="input input-bordered "
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Highlights</p>
+        <p className="my-2 mx-6 mt-5">Highlights*</p>
         <input
           required
           name="highlight"
           type="text"
-          placeholder="Type Your highlights"
+          placeholder="Enter Your highlights"
           className="input input-bordered "
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Description</p>
+        <p className="my-2 mx-6 mt-5">Description*</p>
         <input
           required
           name="description"
           type="text"
-          placeholder="Type Your description"
+          placeholder="Enter Your description"
           className="input input-bordered "
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Main Heading</p>
+        <p className="my-2 mx-6 mt-5">Main Heading*</p>
         <input
           required
           name="main"
           type="text"
-          placeholder="Type Your main heading"
+          placeholder="Enter Your main heading"
           className="input input-bordered "
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">MenuFlag</p>
+        <p className="my-2 mx-6 mt-5">MenuFlag*</p>
         <input
           required
           name="menuFlag"
           type="text"
-          placeholder="Type Your main menuflag"
+          placeholder="Enter Your main menuflag"
           className="input input-bordered "
         />
       </div>
 
       <div>
-        <p className="my-2 mx-6 mt-5">Upload Logo</p>
+        <p className="my-2 mx-6 mt-5">Upload Logo*</p>
         <input
           required
           name="uploadLogo"
           type="text"
-          placeholder="Type Your main menuflag"
+          placeholder="Enter Your logo"
           className="input input-bordered "
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Upload Nav Logo</p>
+        <p className="my-2 mx-6 mt-5">Upload Nav Logo*</p>
         <input
           required
           name="navLogo"
           type="text"
-          placeholder="Type Your main menuflag"
+          placeholder="Enter Your  nav logo"
           className="input input-bordered "
         />
       </div>
       </div>
 
-      <div className="mt-3 lg:mx-48 flex items-center">
-        <input type="checkbox" className="checkbox" />
-        <p className="mx-3">IsActive </p>
+      <div className="mt-5 lg:mx-48 flex items-center">
+      <input type="checkbox" onChange={handleToggle} className="toggle toggle-primary"  />
+        <p className="mx-3">Is Active</p>
       </div>
 
       <input
