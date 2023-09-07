@@ -95,10 +95,10 @@ const TopicFrom = () => {
   };
   return (
     <form onSubmit={handleList} className="my-10">
-      <p className="font-bold text-xl mx-6 lg:px-40">Create a Topic List</p>
+      <p className="font-bold text-xl mx-6 lg:px-40">Create a Topic</p>
      <div className="grid grid-cols-2 lg:px-40">
      <div>
-        <p className="my-2 mx-6 mt-5">Topic Name*</p>
+        <p className="my-2 mx-6 mt-5">Topic Name <span className="text-red-500">*</span> </p>
         <input
           required
           name="name"
@@ -108,7 +108,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Position*</p>
+        <p className="my-2 mx-6 mt-5">Position <span className="text-red-500">*</span> </p>
         <input
           required
           name="position"
@@ -118,7 +118,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">News*</p>
+        <p className="my-2 mx-6 mt-5">News <span className="text-red-500">*</span> </p>
         <input
           required
           name="news"
@@ -128,7 +128,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 lg:mx-6 mt-5">Ariticales*</p>
+        <p className="my-2 lg:mx-6 mt-5">Ariticales <span className="text-red-500">*</span> </p>
         <input
           required
           name="articale"
@@ -138,7 +138,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Highlights*</p>
+        <p className="my-2 mx-6 mt-5">Highlights <span className="text-red-500">*</span> </p>
         <input
           required
           name="highlight"
@@ -148,7 +148,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Description*</p>
+        <p className="my-2 mx-6 mt-5">Description <span className="text-red-500">*</span> </p>
         <input
           required
           name="description"
@@ -158,7 +158,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Main Heading*</p>
+        <p className="my-2 mx-6 mt-5">Main Heading <span className="text-red-500">*</span> </p>
         <input
           required
           name="main"
@@ -168,7 +168,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">MenuFlag*</p>
+        <p className="my-2 mx-6 mt-5">MenuFlag <span className="text-red-500">*</span> </p>
         <input
           required
           name="menuFlag"
@@ -179,7 +179,7 @@ const TopicFrom = () => {
       </div>
 
       <div>
-        <p className="my-2 mx-6 mt-5">Upload Logo*</p>
+        <p className="my-2 mx-6 mt-5">Upload Logo <span className="text-red-500">*</span> </p>
         <input
           required
           name="uploadLogo"
@@ -189,7 +189,7 @@ const TopicFrom = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Upload Nav Logo*</p>
+        <p className="my-2 mx-6 mt-5">Upload Nav Logo <span className="text-red-500">*</span> </p>
         <input
           required
           name="navLogo"
