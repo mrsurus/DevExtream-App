@@ -163,8 +163,7 @@
       "MenuFlag": "https://siteofsports.com/v2/Content/TopicLogo/Italian_flag.png"
     }
   ],
-  "subtopic":[
-  
+  "subtopic": [
     {
       "SubTopicID": 1,
       "TopicID": 1,
@@ -2235,6 +2234,15 @@
       "NewsIcon": null,
       "VideoIcon": null
     }
+  ],
+  "artical": [
+    {
+      "topic": "1",
+      "subTopic": "Senaste nytt",
+      "header": "fafa",
+      "abstract": "jflajfa",
+      "embed": "fafaf",
+      "ArticleId": 1
+    }
   ]
-  
 }

@@ -49,6 +49,7 @@ const Artical = () => {
       abstract,
       embed
     }
+    console.log(fomData);
 
     try {
       const response = await fetch("http://localhost:3000/artical", {

@@ -13,6 +13,11 @@ export const navigation = [
     text: 'Artical',
     path: '/artical',
     icon: 'home'
+  },
+  {
+    text: 'Show-Artical',
+    path: '/show-artical',
+    icon: 'home'
   }
   
   ];

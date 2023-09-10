@@ -12,17 +12,12 @@ import { exportDataGrid } from "devextreme/pdf_exporter";
 import { Workbook } from "exceljs";
 import { saveAs } from "file-saver-es"; // Use 'file-saver-es' as you mentioned
 import { exportDataGrid as exportDataGridExcel } from "devextreme/excel_exporter";
-import { Link, useNavigate } from "react-router-dom";
 
 const exportFormats = ["pdf", "xlsx"]; // Add both export formats
 
-function Tabile() {
+function ArticalTabile() {
   const [topic, setTopic] = useState([]);
-  const [updateName, setUpdateName] = useState("");
-  const navigate = useNavigate()
-
-  // demo text name
-  const [demo, setDemo] = useState();
+//   const [updateName,setUpdateName]=useState('')
 
   // DATE CONVERTION
   let date = new Date();
@@ -44,7 +39,7 @@ function Tabile() {
 
   // FECTCH TEH TOPIC DATA
   useEffect(() => {
-    fetch("http://localhost:3000/topic")
+    fetch("http://localhost:3000/artical")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -54,73 +49,55 @@ function Tabile() {
 
   // deltete function
 
-  const handleDeleteClick = (e) => {
-    const topicIdToDelete = e.data.TopicID;
-    console.log(topicIdToDelete);
-    fetch(`http://localhost:3000/topic/${topicIdToDelete}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        alert("Data deleted successfully");
-        const updatedTopic = topic.filter(
-          (item) => item.TopicID !== topicIdToDelete
-        );
-        setTopic(updatedTopic);
-      })
-      .catch((error) => {
-        console.error("Error deleting data:", error);
-      });
-  };
+//   const handleDeleteClick = (e) => {
+//     const topicIdToDelete = e.data.TopicID;
+//     fetch(`http://localhost:3000/topic/${topicIdToDelete}`, {
+//       method: "DELETE",
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+//         alert("Data deleted successfully");
+//         const updatedTopic = topic.filter(
+//           (item) => item.TopicID !== topicIdToDelete
+//         );
+//         setTopic(updatedTopic);
+//       })
+//       .catch((error) => {
+//         console.error("Error deleting data:", error);
+//       });
+//   };
+//   const updateData=(e)=>{
+//     e.preventDefault()
+//     const name = e.target.name.value
+//     setUpdateName(name)
+//     e.target.reset()
 
-  const updateData = (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    console.log(name);
-
-    fetch(`http://localhost:3000/topic/${updateName}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ Name: name }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // Handle the updated data as needed
-        alert("Data updated successfully");
-
-        // Update the state with the new data
-        const updatedTopics = topic.map((item) => {
-          if (item.TopicID === updateName) {
-            return { ...item, Name: name };
-          }
-          return item;
-        });
-
-        setTopic(updatedTopics);
-        setUpdateName(""); // Clear the updateName state
-      })
-      .catch((error) => {
-        console.error("Error updating data:", error);
-      });
-
-    e.target.reset();
-  };
-
-  console.log(updateName);
+//   }
+//   console.log(updateName);
 
   // handleUpdate
-  const handleUpdate = (e) => {
-    const topicIDToUpdate = e.data.TopicID;
-    const topicName1 = e.data.Name;
-    console.log("hello", topicIDToUpdate);
-    console.log("hello2", topicName1);
+//   const handleUpdate = (e) => {
+//     const topicIDToUpdate = e.data.TopicID;
+//     console.log("hello",topicIDToUpdate);
 
-    // setDemo(topicName1);
-    // setUpdateName(topicIDToUpdate);
-    navigate(`/topic/topicFrom?id=${topicIDToUpdate}`)
-  };
+
+//     fetch(`http://localhost:3000/topics/${topicIDToUpdate}`, {
+//       method: "PUT",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify({ Name: updateName }),
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+//         alert("Data updated successfully");
+//         // Handle the updated data as needed
+//       })
+//       .catch((error) => {
+//         console.error("Error updating data:", error);
+//       });
+    
+//   };
 
   const onExporting = (e) => {
     if (e.format === "pdf") {
@@ -239,56 +216,12 @@ function Tabile() {
         <SearchPanel visible={true} />
         <SortByGroupSummaryInfo summaryItem="count" />
 
-        <Column dataField="Name" />
-        <Column dataField="CreatedOn" dataType="date" />
-
-        <Column
-          caption="Action"
-          width={100}
-          alignment="center"
-          cellRender={(cellData) => {
-            return (
-              <>
-                <label
-                  onClick={() => handleUpdate(cellData.row)}
-                  htmlFor="my_modal_7"
-                >
-                  Edit
-                </label>
-
-                {/* Put this part before </body> tag */}
-                <input
-                  type="checkbox"
-                  id="my_modal_7"
-                  className="modal-toggle"
-                />
-                <div className="modal">
-                  <form onSubmit={updateData} className="modal-box">
-                    <p className="py-4">Update Your Topic</p>
-                    <p>Topic Name</p>
-                    <input
-                      defaultValue={demo}
-                      type="text"
-                      name="name"
-                      placeholder="Enter Topic Name"
-                      className="input input-bordered w-full max-w-xs"
-                    />
-
-                    <input
-                      className="btn btn-primary mx-2"
-                      type="submit"
-                      value={"submit"}
-                    />
-                  </form>
-                  <label className="modal-backdrop" htmlFor="my_modal_7">
-                    Close
-                  </label>
-                </div>
-              </>
-            );
-          }}
-        />
-        <Column
+        <Column dataField="topic" />
+        <Column dataField="subTopic" />
+        <Column dataField="header" />
+        <Column dataField="abstract" />
+        <Column dataField="embed" />
+        {/* <Column
           caption="Action"
           width={100}
           alignment="center"
@@ -302,10 +235,43 @@ function Tabile() {
               </button>
             );
           }}
-        />
+        /> */}
+        {/* <Column
+          caption="Action"
+          width={100}
+          alignment="center"
+          cellRender={(cellData) => {
+            return (
+              <>
+                <label htmlFor="my_modal_7">
+                  Update
+                </label>
+                <input
+                  type="checkbox"
+                  id="my_modal_7"
+                  className="modal-toggle"
+                />
+                <div className="modal">
+                  <form onSubmit={updateData} className="modal-box">
+                    <p className="py-4">
+                      Update Your Topic
+                    </p>
+                    <p>Topic Name</p>
+                    <input type="text" name="name" placeholder="Enter Topic Name" className="input input-bordered w-full max-w-xs" />
+
+                    <input onClick={() => handleUpdate(cellData.row)}  className="btn btn-primary mx-2" type="submit" value={"submit"} />
+                  </form>
+                  <label className="modal-backdrop" htmlFor="my_modal_7">
+                    Close
+                  </label>
+                </div>
+              </>
+            );
+          }}
+        /> */}
       </DataGrid>
     </div>
   );
 }
 
-export default Tabile;
+export default ArticalTabile;

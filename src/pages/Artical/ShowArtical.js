@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import "../../pages/Topic/Topic.scss";
 
 import "whatwg-fetch";
-import Tabile from "./Tabile";
-import { Link } from "react-router-dom";
 
-const Topic = () => {
+import { Link } from "react-router-dom";
+import ArticalTabile from "./ArticalTabile";
+
+const ShowArtical = () => {
   const [listData, setListData] = useState();
 
   const handleList = async (event) => {
@@ -85,7 +86,7 @@ const Topic = () => {
       <div className="mt-5 lg:mx-60 md:mx-12 flex justify-around items-center">
         {listData}
         <div>
-          <p className="text-4xl font-bold">Create Topic</p>
+          <p className="text-4xl font-bold">Articale Data</p>
         </div>
         {/* Open the modal using ID.showModal() method */}
         <Link to={'/topic/topicFrom'}>
@@ -195,11 +196,11 @@ const Topic = () => {
 
       <div className="mt-5 lg:mx-60 md:mx-12">
         <div class="md:w-3/3 py-3">
-          <Tabile></Tabile>
+           <ArticalTabile></ArticalTabile>
         </div>
       </div>
     </div>
   );
 };
 
-export default Topic;
+export default ShowArtical;

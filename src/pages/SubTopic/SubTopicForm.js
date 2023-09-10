@@ -61,7 +61,7 @@ const SubToicForm = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:3000/createSubTopic", {
+      const response = await fetch("http://localhost:3000/subtopic", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,10 +104,10 @@ const SubToicForm = () => {
   };
   return (
     <form onSubmit={handleList} className="my-10">
-      <p className="font-bold text-xl mx-6 lg:px-40">Create a Sub Topic</p>
+      <p className="font-bold text-2sxl mx-6 lg:px-40">Create a Sub Topic List</p>
      <div className="grid grid-cols-2 lg:px-40">
      <div>
-        <p className="my-2 mx-6 mt-5">SubTopic Name <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">SubTopic Name</p>
         <input
           required
           name="name"
@@ -117,7 +117,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-      <p className="my-2 mx-6 mt-5">Select Topic <span className="text-red-500">*</span></p>
+      <p className="my-2 mx-6 mt-5">Select Topic</p>
             <div className="mx-5">
               <select name="selectTopic" className="select select-bordered w-10/12  ">
                 {subList.map((list) => (
@@ -127,7 +127,7 @@ const SubToicForm = () => {
             </div>
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Position <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">Position</p>
         <input
           required
           name="position"
@@ -137,7 +137,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">News <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">News</p>
         <input
           required
           name="news"
@@ -147,7 +147,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 lg:mx-6 mt-5">Ariticales <span className="text-red-500">*</span></p>
+        <p className="my-2 lg:mx-6 mt-5">Ariticales</p>
         <input
           required
           name="articale"
@@ -157,7 +157,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Highlights <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">Highlights</p>
         <input
           required
           name="highlight"
@@ -167,7 +167,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Description <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">Description</p>
         <input
           required
           name="description"
@@ -177,7 +177,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Main Heading <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">Main Heading</p>
         <input
           required
           name="main"
@@ -187,7 +187,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">MenuFlag <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">MenuFlag</p>
         <input
           required
           name="menuFlag"
@@ -198,7 +198,7 @@ const SubToicForm = () => {
       </div>
 
       <div>
-        <p className="my-2 mx-6 mt-5">Upload Logo <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">Upload Logo</p>
         <input
           required
           name="uploadLogo"
@@ -208,7 +208,7 @@ const SubToicForm = () => {
         />
       </div>
       <div>
-        <p className="my-2 mx-6 mt-5">Upload Nav Logo <span className="text-red-500">*</span></p>
+        <p className="my-2 mx-6 mt-5">Upload Nav Logo</p>
         <input
           required
           name="navLogo"

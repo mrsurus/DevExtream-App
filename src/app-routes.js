@@ -5,6 +5,7 @@ import SubTopic from './pages/SubTopic/SubTopic';
 import Artical from './pages/Artical/Artical';
 import TopicFrom from './pages/Topic/TopicFrom';
 import SubToicForm from './pages/SubTopic/SubTopicForm';
+import ShowArtical from './pages/Artical/ShowArtical';
 
 const routes = [
     {
@@ -37,7 +38,12 @@ const routes = [
     },
     {
         path: '/subtopic/subtopicForm',
-        element: SubToicForm
+        element: SubToicForm,
+        
+    },
+    {
+        path: '/show-artical',
+        element: ShowArtical
     }
 ];
 
